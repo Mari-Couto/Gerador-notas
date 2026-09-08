@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Notas - Implantação Técnica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gerador de Notas — Implantação Técnica</h1>
+            <p>Transforme seus dados de reunião em uma nota profissional</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Seção de Histórico (Sidebar) -->
+            <aside class="sidebar">
+                <div class="history-section">
+                    <h3>Histórico de Notas Recentes</h3>
+                    <div id="historyList" class="history-list">
+                        <p class="empty-history">Nenhuma nota gerada ainda</p>
+                    </div>
+                    <button class="clear-history-btn" id="clearHistoryBtn">Limpar Histórico</button>
+                </div>
+            </aside>
+
+            <!-- Seção Principal -->
+            <main class="main-form">
+                <!-- Formulário -->
+                <section class="form-section">
+                    <h2>Informações da Reunião</h2>
+
+                    <!-- Nome do Implantador -->
+                    <div class="form-group">
+                        <label for="nomeDoimplantador">Nome do Implantador</label>
+                        <input type="text" id="nomeDoimplantador" placeholder="Digite seu nome" class="persist-field">
+                        <small>Será salvo automaticamente</small>
+                    </div>
+
+                    <!-- Cliente/Empresa -->
+                    <div class="form-group">
+                        <label for="clienteEmpresa">Cliente/Empresa</label>
+                        <input type="text" id="clienteEmpresa" placeholder="Ex: Acme Corp">
+                    </div>
+
+                    <!-- Tipo de Reunião -->
+                    <div class="form-group">
+                        <label for="tipoReuniao">Tipo/Número da Reunião</label>
+                        <input type="text" id="tipoReuniao" placeholder="Ex: 2° Reunião">
+                    </div>
+
+                    <!-- Data -->
+                    <div class="form-group">
+                        <label for="dataReuniao">Data da Conclusão</label>
+                        <input type="date" id="dataReuniao">
+                    </div>
+
+                    <!-- Duração -->
+                    <div class="form-group">
+                        <label for="duracao">Duração da Reunião</label>
+                        <input type="text" id="duracao" placeholder="Ex: 1h">
+                    </div>
+
+                    <!-- Participantes -->
+                    <div class="form-group">
+                        <label for="participantes">Participantes (nomes/equipe)</label>
+                        <textarea id="participantes" placeholder="Ex: Lucas e equipe" rows="2"></textarea>
+                    </div>
+
+                    <!-- Apresentado/Realizado -->
+                    <div class="form-group">
+                        <label>O que foi apresentado/realizado?</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="apresentado" value="Configurações iniciais">
+                                Configurações iniciais
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="apresentado" value="Chatbot">
+                                Chatbot
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="apresentado" value="Funil">
+                                Funil
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="apresentado" value="Dashboard">
+                                Dashboard
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="apresentado" value="Relatórios">
+                                Relatórios
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="apresentado" value="JetVoice">
+                                JetVoice
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="apresentado" value="Contatos">
+                                Contatos
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pendências -->
+                    <div class="form-group">
+                        <label>O que ficou pendente?</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="pendente" value="Configurações iniciais">
+                                Configurações iniciais
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="pendente" value="Chatbot">
+                                Chatbot
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="pendente" value="Funil">
+                                Funil
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="pendente" value="Dashboard">
+                                Dashboard
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="pendente" value="Relatórios">
+                                Relatórios
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="pendente" value="JetVoice">
+                                JetVoice
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="pendente" value="Contatos">
+                                Contatos
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Próximos Passos -->
+                    <div class="form-group">
+                        <label for="proximosPassos">Próximos passos</label>
+                        <textarea id="proximosPassos" placeholder="Descreva os próximos passos da implantação" rows="3"></textarea>
+                    </div>
+
+                    <!-- Possível Upsell -->
+                    <div class="form-group">
+                        <label>Possível Upsell</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="upsell" value="Migração para API Oficial">
+                                Migração para API Oficial
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="upsell" value="Customizações avançadas">
+                                Customizações avançadas
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="upsell" value="Consultoria especializada">
+                                Consultoria especializada
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="upsell" value="Treinamento completo">
+                                Treinamento completo
+                            </label>
+                        </div>
+                        <textarea id="obsUpsell" placeholder="Observações sobre o possível upsell (contextualize a oportunidade)" rows="2"></textarea>
+                    </div>
+
+                    <!-- Observações -->
+                    <div class="form-group">
+                        <label for="observacoes">Observações</label>
+                        <textarea id="observacoes" placeholder="Adicione observações relevantes" rows="2"></textarea>
+                    </div>
+
+                    <!-- Gravação -->
+                    <div class="form-group">
+                        <label>Links de Gravação</label>
+                        <div id="videoLinks" class="video-links">
+                            <div class="video-link-item">
+                                <input type="url" class="video-link" placeholder="Cole o link da gravação aqui">
+                                <button type="button" class="remove-video-btn">✕</button>
+                            </div>
+                        </div>
+                        <button type="button" class="add-video-btn" id="addVideoBtn">+ Adicionar outro link</button>
+                    </div>
+
+                    <!-- Botões de Ação -->
+                    <div class="form-actions">
+                        <button id="gerarNota" class="btn btn-primary">Gerar Nota</button>
+                        <button id="limpar" class="btn btn-secondary">Limpar</button>
+                    </div>
+                </section>
+
+                <!-- Preview da Nota -->
+                <section class="preview-section">
+                    <h2>Preview da Nota</h2>
+                    <div id="preview" class="preview-content">
+                        <p class="placeholder">A nota gerada aparecerá aqui</p>
+                    </div>
+                    <div class="preview-actions">
+                        <button id="copiarNota" class="btn btn-success" style="display: none;">📋 Copiar Nota</button>
+                        <button id="salvarNota" class="btn btn-success" style="display: none;">💾 Salvar Nota</button>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
